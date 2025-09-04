@@ -1,5 +1,5 @@
 super + d
-  rofi -show drun -theme /home/bakr/.config/rofi/launchers/type-6/style-5.rasi
+  rofi -show drun -theme /home/$USER/.config/rofi/launchers/type-6/style-5.rasi
 
 super + Return
 	kitty --directory ~
@@ -27,13 +27,6 @@ F5
 F6
     /usr/bin/brightnessctl set +5% >/dev/null 2>&1
 
-# Network
-#nmcli monitor | while read -r line; do
-#    /home/bakr/.local/bin/dunst-notifications/notify-network.sh
-
-# Toggle Screens
-#super + p
-#    ~/.scripts/auto-display.sh
 
 # File explorer
 super + shift + e
@@ -63,7 +56,7 @@ super + ctrl + r
     systemctl reboot
 
 super + ctrl + l
-    ~/.scripts/lockscreen.sh
+    ~/.config/scripts/lockscreen.sh
 
 super + ctrl  + u
     systemctl suspend
@@ -82,7 +75,7 @@ super + ctrl + b
 
 # Full screenshot
 super + alt + s
-    maim /home/bakr/Pictures/screenshots/$(date +%s).png && dunstify "📸 Screenshot Taken"
+    maim /home/$USER/Pictures/screenshots/$(date +%s).png && dunstify "📸 Screenshot Taken"
 
 # Screenshot selection 
 super + shift + s
