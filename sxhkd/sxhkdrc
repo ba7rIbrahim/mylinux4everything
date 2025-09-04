@@ -1,0 +1,109 @@
+super + d
+  rofi -show drun -theme /home/bakr/.config/rofi/launchers/type-6/style-5.rasi
+
+super + Return
+	kitty --directory ~
+
+# Update sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+
+# --- Volume ---
+F1
+    /usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+F2
+    /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+F3
+    /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+
+# --- Brightness ---
+F5
+   /usr/bin/brightnessctl set 5%- >/dev/null 2>&1
+
+
+F6
+    /usr/bin/brightnessctl set +5% >/dev/null 2>&1
+
+# Network
+#nmcli monitor | while read -r line; do
+#    /home/bakr/.local/bin/dunst-notifications/notify-network.sh
+
+# Toggle Screens
+#super + p
+#    ~/.scripts/auto-display.sh
+
+# File explorer
+super + shift + e
+    xdg-open .
+
+# Brave Browser
+super + b
+	brave-browser
+
+# Zen Browser
+super + z
+  flatpak run app.zen_browser.zen
+
+# Open Google Chrome
+super + g
+    google-chrome-stable
+
+# Thunderbird mail
+super + m
+	thunderbird
+
+# Power options
+super + ctrl + s
+    systemctl poweroff
+
+super + ctrl + r
+    systemctl reboot
+
+super + ctrl + l
+    ~/.scripts/lockscreen.sh
+
+super + ctrl  + u
+    systemctl suspend
+
+# Cursor IDE
+super + c
+    cursor
+
+# Telegram
+super + t
+    flatpak run org.telegram.desktop
+
+# Open btop
+super + ctrl + b
+    kitty -e btop
+
+# Full screenshot
+super + alt + s
+    maim /home/bakr/Pictures/screenshots/$(date +%s).png && dunstify "📸 Screenshot Taken"
+
+# Screenshot selection 
+super + shift + s
+     maim -s | xclip -selection clipboard -t image/png && dunstify "📸 Screenshot Copied" 
+ 
+
+# Run rofimoji
+super + apostrophe
+    rofimoji --clipboarder xclip
+
+# CopyQ
+super + shift + v
+     copyq toggle
+
+
+# Hide dunst notification
+alt + h
+    dunstctl close
+
+
+# Zellij termianl
+super + backslash  
+  kitty -e zellij
+
