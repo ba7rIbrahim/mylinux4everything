@@ -17,11 +17,28 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        colorscheme = "solarized-osaka",
+      },
+    },
+    -- import any extras modules here
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    -- { import = "lazyvim.plugins.extras.dap.core" },
+    -- { import = "lazyvim.plugins.extras.vscode" },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    -- { import = "lazyvim.plugins.extras.test.core" },
+    -- { import = "lazyvim.plugins.extras.coding.yanky" },
+    -- { import = "lazyvim.plugins.extras.editor.mini-files" },
+    -- { import = "lazyvim.plugins.extras.util.project" },
     { import = "plugins" },
   },
   defaults = {
